@@ -1022,12 +1022,6 @@ void PAlgebraModDerived<type>::CRT_reconstruct(RX& H,
     for (long i = 0; i < nslots; i++)
       MulMod(crt1[i], crt[i], crtCoeffs[i], factors[i]);
 
-    std::clog << std::endl;
-    for (long i : range(nslots)) {
-      std::clog << crt1[i] << std::endl;
-    }
-    std::clog << std::endl;
-
     evalTree(H, crtTree, crt1, 0, nslots);
   }
   HELIB_TIMER_STOP;
