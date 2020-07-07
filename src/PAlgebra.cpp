@@ -984,6 +984,12 @@ void PAlgebraModDerived<type>::embedInSlots(
 #endif
   }
 
+  std::clog << std::endl;
+  for (long i : range(nSlots)) {
+    std::clog << crt[i] << std::endl;
+  }
+  std::clog << std::endl;
+  
   CRT_reconstruct(H, crt); // interpolate to get p
 
   HELIB_TIMER_STOP;
