@@ -1023,7 +1023,7 @@ void PAlgebraModDerived<type>::CRT_reconstruct(RX& H,
       MulMod(crt1[i], crt[i], crtCoeffs[i], factors[i]);
 
     std::clog << std::endl;
-    for (long i : range(nSlots)) {
+    for (long i : range(nslots)) {
       std::clog << crt1[i] << std::endl;
     }
     std::clog << std::endl;
