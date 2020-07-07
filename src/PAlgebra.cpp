@@ -984,12 +984,6 @@ void PAlgebraModDerived<type>::embedInSlots(
 #endif
   }
 
-  std::clog << std::endl;
-  for (long i : range(nSlots)) {
-    std::clog << crt[i] << std::endl;
-  }
-  std::clog << std::endl;
-  
   CRT_reconstruct(H, crt); // interpolate to get p
 
   HELIB_TIMER_STOP;
@@ -1027,6 +1021,12 @@ void PAlgebraModDerived<type>::CRT_reconstruct(RX& H,
     resize(crt1, nslots);
     for (long i = 0; i < nslots; i++)
       MulMod(crt1[i], crt[i], crtCoeffs[i], factors[i]);
+
+    std::clog << std::endl;
+    for (long i : range(nSlots)) {
+      std::clog << crt1[i] << std::endl;
+    }
+    std::clog << std::endl;
 
     evalTree(H, crtTree, crt1, 0, nslots);
   }
